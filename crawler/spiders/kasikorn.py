@@ -75,7 +75,6 @@ class KasikornSpider(BaseSpider):
             images_list.append("https://www.kasikornresearch.com" + figure.xpath('./@src').get())
         item['images'] = images_list
         item['body'] = '\n'.join(['%s' % i.xpath('string(.)').get() for i in response.xpath('//div[@class="art-content entrycontent"]/p |//div[@class="art-content entrycontent"]/ul | //div[@class="art-content entrycontent"]/div[(@style="text-align:justify;")]')])
-
         yield item
 
 
