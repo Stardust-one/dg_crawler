@@ -1,0 +1,27 @@
+{
+    // vscode调试脚本
+
+    "version": "0.2.0",
+    "configurations": [
+        { // 运行临时脚本
+            "name": "脚本",
+            "type": "python",
+            "request": "launch",
+            "module": "scripts.test"
+        },
+        { // 爬全部的
+            "name": "scrapy all",
+            "type": "python",
+            "request": "launch",
+            "module": "scrapy",
+            "args": ["crawl", "demo_spider", "-a", "db=00", "-a", "proxy=00"]
+        },
+        { // 指定时间戳爬时间戳之后的
+            "name": "scrapy time",
+            "type": "python",
+            "request": "launch",
+            "module": "scrapy",
+            "args": ["crawl", "demo_spider", "-a", "db=00", "-a", "proxy=00", "-a", "time=days_ago:3"]
+        }
+    ]
+}
